@@ -1,32 +1,26 @@
-
-import java.util.LinkedList;
-import java.util.Queue;
-
+import java.util.ArrayList;
+import java.util.List;
 
 public class Aula{
     public static void main(String[] args) {
-         Queue<Double> Num = new LinkedList<>();
-        Num.add(1.19);
-        Num.add(3.79);
-        Num.add(2.55);
-        Num.add(4.85);
-        Num.add(99.90);
-        Num.add(1.90);
-        Num.add(3.70);
-        Num.add(5.66);
-        Num.add(3.45);
-        Num.add(7.89);
+        // É uma boa prática programar para a interface (List)
+        List<Cliente> clientes = new ArrayList<>();
 
-        System.out.println("A fila contém: "+Num);
-        System.out.println("Próximo a ser removido: "+Num.peek());
-        Num.poll();
-        Num.poll();
-        Num.poll();
-        System.out.println("A fila contém: "+Num);
-        System.out.println("\n Limpando todos itens da fila...");
-        Num.clear();
-        System.out.println("Fila após a limpeza: "+ Num);
-        System.out.println("Fila está vazia: "+Num.isEmpty());
-      
+        // Usando o novo construtor e CPFs como String
+        Cliente cliente1 = new Cliente("Maria Rocha", 44, "Rua General Camara 302", "Centro", "123.456.789-10");
+        Cliente cliente2 = new Cliente("João Almeida", 28, "Avenida Brasil 500", "Jardins", "111.222.333-44");
+
+        clientes.add(cliente1);
+        clientes.add(cliente2);
+
+        System.out.println("Lista de clientes: " + clientes);
+
+        // Corrigido: Acessando um índice válido (0 para o primeiro cliente)
+        System.out.println("\nDados do primeiro cliente (índice 0): " + clientes.get(0));
+
+        // Removendo o segundo cliente (no índice 1) de forma mais clara
+        System.out.println("\nCliente removido: " + clientes.remove(1));
+        
+        System.out.println("\nLista final de clientes: " + clientes);
     }
 }
